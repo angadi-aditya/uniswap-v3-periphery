@@ -35,7 +35,7 @@ const DEFAULT_COMPILER_SETTINGS = {
   settings: {
     optimizer: {
       enabled: true,
-      runs: 1_000_000,
+      runs: 1000,
     },
     metadata: {
       bytecodeHash: 'none',
@@ -47,15 +47,22 @@ export default {
   networks: {
     hardhat: {
       allowUnlimitedContractSize: false,
+      forking: {
+        url: 'https://eth-rinkeby.alchemyapi.io/v2/s9lJLvBJ9mwJtom-WH3mnxLJlbxXiBrP',
+        blockNumber: 8852886,
+      }
     },
     mainnet: {
-      url: `https://mainnet.infura.io/v3/${process.env.INFURA_API_KEY}`,
+      url: `https://eth-mainnet.alchemyapi.io/v2/s9lJLvBJ9mwJtom-WH3mnxLJlbxXiBrP`,
     },
     ropsten: {
       url: `https://ropsten.infura.io/v3/${process.env.INFURA_API_KEY}`,
     },
     rinkeby: {
-      url: `https://rinkeby.infura.io/v3/${process.env.INFURA_API_KEY}`,
+      url: `https://rinkeby.infura.io/v3/3912d98de1f8474cb3040b6875c2c67e`,
+      accounts: {
+        mnemonic:"journey female bring inject beauty strategy egg erupt noodle pledge pause lion"
+      }
     },
     goerli: {
       url: `https://goerli.infura.io/v3/${process.env.INFURA_API_KEY}`,
